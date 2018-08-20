@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Liu19950513/config-reop.git
+          username: 984092512@qq.com
+          password: asd13579
+          #basedir: D:/Code/IdeaWorkSpace/config/basedir
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"

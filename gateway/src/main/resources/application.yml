@@ -1,0 +1,20 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    myClothes:
+      path: /myClothes/**
+      serviceId: clothes
+  #ÅÅ³ýÄ³Ð©Â·ÓÉ
+  ignored-patterns:
+    - /**/clothes/clothesInfoForRecommend
+management:
+  security:
+    enabled: false
