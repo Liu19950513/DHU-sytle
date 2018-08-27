@@ -3,6 +3,8 @@ package com.dhu.user.dataobject;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -13,7 +15,8 @@ import javax.persistence.Id;
 @Entity
 public class UserInfo {
     @Id
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
     /**
      * 用户名
      */
@@ -50,5 +53,7 @@ public class UserInfo {
      * 六种风格：
      */
     private String style;
+
+    private Integer height;
 
 }

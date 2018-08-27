@@ -27,10 +27,40 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserInfoVO findUserInfo(String id){
-        List<UserInfo> userInfoList = userInfoRepository.findByUserId(id);
+    public UserInfoVO findUserInfo(Long id){
+        UserInfo userInfo = userInfoRepository.findByUserId(id);
         UserInfoVO userInfoVO = new UserInfoVO();
-        BeanUtils.copyProperties(userInfoList.get(0),userInfoVO);
+        BeanUtils.copyProperties(userInfo,userInfoVO);
         return userInfoVO;
+    }
+
+    @Override
+    public UserInfo IsExist(String email){
+        List<UserInfo> list = userInfoRepository.findByEmail(email);
+        return list.size() == 1 ? list.get(0): new UserInfo();
+    }
+
+    @Override
+    public  UserInfo register(UserInfo user){
+        return userInfoRepository.save(user);
+    }
+
+    /**
+     * 用户测评更新用户信息
+     * @param userInfoVO
+     * @return
+     */
+    @Override
+    public UserInfo update(UserInfoVO userInfoVO){
+        UserInfo user = userInfoRepository.findByUserId(userInfoVO.getUserId());
+        user.setType(1);
+        BeanUtils.copyProperties(userInfoVO, user);
+        return userInfoRepository.save(user);
+    }
+
+
+    @Override
+    public void writeOff(String email){
+
     }
 }

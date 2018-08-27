@@ -10,11 +10,11 @@ eureka:
 zuul:
   routes:
     myClothes:
-      path: /myClothes/**
+      path: /clothes/**
       serviceId: clothes
-  #ÅÅ³ýÄ³Ð©Â·ÓÉ
-  ignored-patterns:
-    - /**/clothes/clothesInfoForRecommend
+    myUser:
+      path: /user/**
+      serviceId: user
 management:
   security:
     enabled: false

@@ -1,6 +1,7 @@
 package com.dhu.user.service;
 
 import com.dhu.user.UserApplicationTests;
+import com.dhu.user.VO.UserInfoVO;
 import com.dhu.user.dataobject.UserInfo;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,7 +16,8 @@ public class UserServiceTest extends UserApplicationTests {
     private  UserService userService;
     @Test
     public void findByNameAndPassword() {
-        UserInfo userInfo = userService.findByEmailAndPassword("984092512@qq.com","asd13579");
+        UserInfo userInfo = userService.findByEmailAndPassword("98409212@qq.com","asd13579");
         Assert.assertTrue(userInfo != null);
     }
+
 }

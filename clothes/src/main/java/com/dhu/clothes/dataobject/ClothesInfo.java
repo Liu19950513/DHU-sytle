@@ -9,13 +9,16 @@ import javax.persistence.Id;
 @Entity
 public class ClothesInfo {
     @Id
-    private String clothesId;
+    private Long clothesId;
     /** 标题*/
     private String title;
     /** 图片的链接*/
     private String url;
     /** 服装风格 */
     private String style;
+    /** 服装适合的肤色 */
+    private String skin;
+
     /** 服装主色 */
     private String color;
     /** 服装主类别

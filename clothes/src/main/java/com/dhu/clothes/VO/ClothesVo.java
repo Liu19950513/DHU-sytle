@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 按类别排列的服装信息对象
  */
-public class ClothesVo {
+public class ClothesVO {
 
     //private String categoryName;
     /**

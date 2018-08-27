@@ -9,8 +9,13 @@ import lombok.Data;
 
 @Data
 public class UserInfoVO {
-    private String userName;
+    private Long userId;
+    private String name;
+    private String style;
     private Integer age;
     private String body;
     private String skin;
+    private Integer height;
+
+
 }

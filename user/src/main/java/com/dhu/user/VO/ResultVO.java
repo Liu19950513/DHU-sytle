@@ -1,8 +1,25 @@
 package com.dhu.user.VO;
 
+import lombok.Data;
+
 /**
- * creater: LIUYING
- * date:2018/8/19 20:29
+ * http请求返回最外层对象
+ * created by LiuYing
+ * 2018-8-13
+ * @param <T>
  */
-public class ResultVO {
+@Data
+public class ResultVO<T> {
+    /**
+     * 错误码
+     */
+    private Integer code;
+    /**
+     * 提示信息
+     */
+    private String msg;
+    /**
+     * 具体内容
+     */
+    private T data;
 }

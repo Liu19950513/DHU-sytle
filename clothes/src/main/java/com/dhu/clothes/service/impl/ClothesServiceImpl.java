@@ -26,7 +26,7 @@ public class ClothesServiceImpl implements ClothesService {
     }
 
     @Override
-    public List<ClothesInfoVO> findList(List<String> clothesIdList ){
+    public List<ClothesInfoVO> findList(List<Long> clothesIdList ){
         return clothesInfoRepository.findByClothesIdIn(clothesIdList).stream().
                 map(e->{
                     ClothesInfoVO output = new ClothesInfoVO();
@@ -35,4 +35,8 @@ public class ClothesServiceImpl implements ClothesService {
                 }).collect(Collectors.toList());
     }
 
+    @Override
+    public List<ClothesInfo> findForMatch(String style, String skin) {
+        return clothesInfoRepository.findByStyleAndSkin(style, skin);
+    }
 }

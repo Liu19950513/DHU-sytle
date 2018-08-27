@@ -9,14 +9,14 @@ import lombok.Data;
 @Data
 public class UserVO {
 
-    private String userId;
-    /**
-     * 用户邮箱
-     */
+    private Long userId;
+
     private String email;
-    /**
-     * 用户密码
-     */
+
     private String password;
+
+    private String name;
+
+    private Integer type;
 
 }
